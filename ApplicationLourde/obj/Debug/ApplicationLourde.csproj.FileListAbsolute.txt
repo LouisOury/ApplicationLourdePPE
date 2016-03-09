@@ -1,0 +1,16 @@
+C:\Users\lo01.octave.OCTAVE\Documents\Cours\PPE\ApplicationLourde\ApplicationLourde\bin\Debug\ApplicationLourde.exe.config
+C:\Users\lo01.octave.OCTAVE\Documents\Cours\PPE\ApplicationLourde\ApplicationLourde\bin\Debug\ApplicationLourde.exe
+C:\Users\lo01.octave.OCTAVE\Documents\Cours\PPE\ApplicationLourde\ApplicationLourde\bin\Debug\ApplicationLourde.pdb
+C:\Users\lo01.octave.OCTAVE\Documents\Cours\PPE\ApplicationLourde\ApplicationLourde\obj\Debug\ApplicationLourde.csprojResolveAssemblyReference.cache
+C:\Users\lo01.octave.OCTAVE\Documents\Cours\PPE\ApplicationLourde\ApplicationLourde\obj\Debug\MainWindow.g.cs
+C:\Users\lo01.octave.OCTAVE\Documents\Cours\PPE\ApplicationLourde\ApplicationLourde\obj\Debug\App.g.cs
+C:\Users\lo01.octave.OCTAVE\Documents\Cours\PPE\ApplicationLourde\ApplicationLourde\obj\Debug\ApplicationLourde_MarkupCompile.cache
+C:\Users\lo01.octave.OCTAVE\Documents\Cours\PPE\ApplicationLourde\ApplicationLourde\obj\Debug\ApplicationLourde_MarkupCompile.lref
+C:\Users\lo01.octave.OCTAVE\Documents\Cours\PPE\ApplicationLourde\ApplicationLourde\obj\Debug\MainWindow.baml
+C:\Users\lo01.octave.OCTAVE\Documents\Cours\PPE\ApplicationLourde\ApplicationLourde\obj\Debug\ApplicationLourde.g.resources
+C:\Users\lo01.octave.OCTAVE\Documents\Cours\PPE\ApplicationLourde\ApplicationLourde\obj\Debug\ApplicationLourde.Properties.Resources.resources
+C:\Users\lo01.octave.OCTAVE\Documents\Cours\PPE\ApplicationLourde\ApplicationLourde\obj\Debug\ApplicationLourde.csproj.GenerateResource.Cache
+C:\Users\lo01.octave.OCTAVE\Documents\Cours\PPE\ApplicationLourde\ApplicationLourde\obj\Debug\ApplicationLourde.exe
+C:\Users\lo01.octave.OCTAVE\Documents\Cours\PPE\ApplicationLourde\ApplicationLourde\obj\Debug\ApplicationLourde.pdb
+C:\Users\lo01.octave.OCTAVE\Documents\Cours\PPE\ApplicationLourde\ApplicationLourde\bin\Debug\EntityFramework.xml
+C:\Users\lo01.octave.OCTAVE\Documents\Cours\PPE\ApplicationLourde\ApplicationLourde\bin\Debug\MySql.Data.dll

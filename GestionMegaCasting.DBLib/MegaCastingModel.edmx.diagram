@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="10dacd434440497db1e0a37e411da857" Name="Diagram1">
+        <EntityTypeShape EntityType="megacastingv2Model.candidat" PointX="6.875" PointY="8.875" Width="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="megacastingv2Model.compte" PointX="8.375" PointY="6.375" Width="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="megacastingv2Model.contrat" PointX="3" PointY="5.5" Width="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="megacastingv2Model.cv" PointX="6.875" PointY="13.375" Width="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="megacastingv2Model.diffuseur" PointX="12.875" PointY="8.875" Width="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="megacastingv2Model.diplome" PointX="8" PointY="15.75" Width="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="megacastingv2Model.domaine" PointX="0.75" PointY="2.375" Width="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="megacastingv2Model.experienceprofessionnelle" PointX="5.75" PointY="15.75" Width="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="megacastingv2Model.metier" PointX="3" PointY="2.25" Width="1.5" IsExpanded="true" />
+        <AssociationConnector ManuallyRouted="false" Association="megacastingv2Model.candidat_ibfk_1" />
+        <AssociationConnector ManuallyRouted="false" Association="megacastingv2Model.metier_ibfk_1" />
+        <InheritanceConnector EntityType="megacastingv2Model.diplome" />
+        <InheritanceConnector EntityType="megacastingv2Model.experienceprofessionnelle" />
+        <InheritanceConnector EntityType="megacastingv2Model.cv" />
+        <InheritanceConnector EntityType="megacastingv2Model.diffuseur" />
+        <EntityTypeShape EntityType="megacastingv2Model.client" PointX="3" PointY="7.875" Width="1.5" />
+        <EntityTypeShape EntityType="megacastingv2Model.offre" PointX="5.25" PointY="1" Width="1.5" />
+        <AssociationConnector Association="megacastingv2Model.offre_ibfk_1" />
+        <AssociationConnector Association="megacastingv2Model.offre_ibfk_3" />
+        <AssociationConnector Association="megacastingv2Model.offre_ibfk_2" />
+        <AssociationConnector Association="megacastingv2Model.offrecandidat" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

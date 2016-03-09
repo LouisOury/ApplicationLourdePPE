@@ -1,0 +1,12 @@
+C:\Users\lo01.octave.OCTAVE\Documents\Cours\PPE\ApplicationLourde\GestionMegaCasting.DBLib\bin\Debug\GestionMegaCasting.DBLib.dll.config
+C:\Users\lo01.octave.OCTAVE\Documents\Cours\PPE\ApplicationLourde\GestionMegaCasting.DBLib\bin\Debug\GestionMegaCasting.DBLib.dll
+C:\Users\lo01.octave.OCTAVE\Documents\Cours\PPE\ApplicationLourde\GestionMegaCasting.DBLib\bin\Debug\GestionMegaCasting.DBLib.pdb
+C:\Users\lo01.octave.OCTAVE\Documents\Cours\PPE\ApplicationLourde\GestionMegaCasting.DBLib\bin\Debug\EntityFramework.dll
+C:\Users\lo01.octave.OCTAVE\Documents\Cours\PPE\ApplicationLourde\GestionMegaCasting.DBLib\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\lo01.octave.OCTAVE\Documents\Cours\PPE\ApplicationLourde\GestionMegaCasting.DBLib\bin\Debug\MySql.Data.dll
+C:\Users\lo01.octave.OCTAVE\Documents\Cours\PPE\ApplicationLourde\GestionMegaCasting.DBLib\bin\Debug\MySql.Data.Entity.EF6.dll
+C:\Users\lo01.octave.OCTAVE\Documents\Cours\PPE\ApplicationLourde\GestionMegaCasting.DBLib\bin\Debug\EntityFramework.xml
+C:\Users\lo01.octave.OCTAVE\Documents\Cours\PPE\ApplicationLourde\GestionMegaCasting.DBLib\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\lo01.octave.OCTAVE\Documents\Cours\PPE\ApplicationLourde\GestionMegaCasting.DBLib\obj\Debug\GestionMegaCasting.DBLib.csprojResolveAssemblyReference.cache
+C:\Users\lo01.octave.OCTAVE\Documents\Cours\PPE\ApplicationLourde\GestionMegaCasting.DBLib\obj\Debug\GestionMegaCasting.DBLib.dll
+C:\Users\lo01.octave.OCTAVE\Documents\Cours\PPE\ApplicationLourde\GestionMegaCasting.DBLib\obj\Debug\GestionMegaCasting.DBLib.pdb

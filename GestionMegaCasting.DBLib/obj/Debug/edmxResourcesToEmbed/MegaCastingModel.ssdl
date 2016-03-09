@@ -1,0 +1,320 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="megacastingv2Model.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.6" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="candidat">
+    <Key>
+      <PropertyRef Name="Identifiant" />
+    </Key>
+    <Property Name="Identifiant" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nom" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Prenom" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Telephone" Type="varchar" MaxLength="10" />
+    <Property Name="Portable" Type="varchar" MaxLength="10" />
+    <Property Name="Rue" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CP" Type="int" Nullable="false" />
+    <Property Name="Ville" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="DateNaissance" Type="date" Nullable="false" />
+    <Property Name="Permis" Type="varchar" MaxLength="3" Nullable="false" />
+    <Property Name="IdentifiantCompte" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="client">
+    <Key>
+      <PropertyRef Name="Identifiant" />
+    </Key>
+    <Property Name="Identifiant" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NomEntreprise" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="NomResponsable" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="PrenomResponsable" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="CiviliteResponsable" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="RueEntreprise" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CpEntreprise" Type="int" Nullable="false" />
+    <Property Name="VilleEntreprise" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="MailEntreprise" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="FaxEntreprise" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="TelephoneEntreprise" Type="varchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="compte">
+    <Key>
+      <PropertyRef Name="Identifiant" />
+    </Key>
+    <Property Name="Identifiant" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Pseudonyme" Type="varchar" MaxLength="12" Nullable="false" />
+    <Property Name="MotDePasse" Type="varchar" MaxLength="12" Nullable="false" />
+  </EntityType>
+  <EntityType Name="contrat">
+    <Key>
+      <PropertyRef Name="Identifiant" />
+    </Key>
+    <Property Name="Identifiant" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Libelle" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="cv">
+    <Key>
+      <PropertyRef Name="Identifiant" />
+    </Key>
+    <Property Name="Identifiant" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Titre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Divers" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="IdentifiantCandidat" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="diffuseur">
+    <Key>
+      <PropertyRef Name="Identifiant" />
+    </Key>
+    <Property Name="Identifiant" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NomEntreprise" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="IdentifiantCompte" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="diplome">
+    <Key>
+      <PropertyRef Name="Identifiant" />
+    </Key>
+    <Property Name="Identifiant" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Libelle" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Annee" Type="date" Nullable="false" />
+    <Property Name="IdentifiantCv" Type="bigint" />
+  </EntityType>
+  <EntityType Name="domaine">
+    <Key>
+      <PropertyRef Name="Identifiant" />
+    </Key>
+    <Property Name="Identifiant" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Libelle" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="experienceprofessionnelle">
+    <Key>
+      <PropertyRef Name="Identifiant" />
+    </Key>
+    <Property Name="Identifiant" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NomEntreprise" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="TypeExperience" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="200" />
+    <Property Name="DateDebut" Type="date" Nullable="false" />
+    <Property Name="DateFin" Type="date" />
+    <Property Name="IdentifiantCv" Type="bigint" />
+  </EntityType>
+  <EntityType Name="metier">
+    <Key>
+      <PropertyRef Name="Identifiant" />
+    </Key>
+    <Property Name="Identifiant" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Libelle" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="IdentifiantDomaine" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="offre">
+    <Key>
+      <PropertyRef Name="Identifiant" />
+    </Key>
+    <Property Name="Identifiant" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Libelle" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Reference" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="DateDebutPublication" Type="date" Nullable="false" />
+    <Property Name="DateFinPublication" Type="date" Nullable="false" />
+    <Property Name="DateDebutContrat" Type="date" Nullable="false" />
+    <Property Name="DateFinContrat" Type="date" Nullable="false" />
+    <Property Name="DescriptionPoste" Type="varchar" MaxLength="200" />
+    <Property Name="DescriptionProfil" Type="varchar" MaxLength="200" />
+    <Property Name="NombresPoste" Type="int" />
+    <Property Name="IdentifiantClient" Type="bigint" Nullable="false" />
+    <Property Name="IdentifiantMetier" Type="bigint" Nullable="false" />
+    <Property Name="IdentifiantContrat" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="offrecandidat">
+    <Key>
+      <PropertyRef Name="IdentifiantOffre" />
+      <PropertyRef Name="IdentifiantCandidat" />
+    </Key>
+    <Property Name="IdentifiantOffre" Type="bigint" Nullable="false" />
+    <Property Name="IdentifiantCandidat" Type="bigint" Nullable="false" />
+  </EntityType>
+  <Association Name="candidat_ibfk_1">
+    <End Role="compte" Type="Self.compte" Multiplicity="1" />
+    <End Role="candidat" Type="Self.candidat" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="compte">
+        <PropertyRef Name="Identifiant" />
+      </Principal>
+      <Dependent Role="candidat">
+        <PropertyRef Name="IdentifiantCompte" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="cv_ibfk_1">
+    <End Role="candidat" Type="Self.candidat" Multiplicity="1" />
+    <End Role="cv" Type="Self.cv" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="candidat">
+        <PropertyRef Name="Identifiant" />
+      </Principal>
+      <Dependent Role="cv">
+        <PropertyRef Name="IdentifiantCandidat" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="diffuseur_ibfk_1">
+    <End Role="compte" Type="Self.compte" Multiplicity="1" />
+    <End Role="diffuseur" Type="Self.diffuseur" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="compte">
+        <PropertyRef Name="Identifiant" />
+      </Principal>
+      <Dependent Role="diffuseur">
+        <PropertyRef Name="IdentifiantCompte" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="diplome_ibfk_1">
+    <End Role="cv" Type="Self.cv" Multiplicity="0..1" />
+    <End Role="diplome" Type="Self.diplome" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="cv">
+        <PropertyRef Name="Identifiant" />
+      </Principal>
+      <Dependent Role="diplome">
+        <PropertyRef Name="IdentifiantCv" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="experienceprofessionnelle_ibfk_1">
+    <End Role="cv" Type="Self.cv" Multiplicity="0..1" />
+    <End Role="experienceprofessionnelle" Type="Self.experienceprofessionnelle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="cv">
+        <PropertyRef Name="Identifiant" />
+      </Principal>
+      <Dependent Role="experienceprofessionnelle">
+        <PropertyRef Name="IdentifiantCv" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="metier_ibfk_1">
+    <End Role="domaine" Type="Self.domaine" Multiplicity="1" />
+    <End Role="metier" Type="Self.metier" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="domaine">
+        <PropertyRef Name="Identifiant" />
+      </Principal>
+      <Dependent Role="metier">
+        <PropertyRef Name="IdentifiantDomaine" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="offre_ibfk_1">
+    <End Role="client" Type="Self.client" Multiplicity="1" />
+    <End Role="offre" Type="Self.offre" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="client">
+        <PropertyRef Name="Identifiant" />
+      </Principal>
+      <Dependent Role="offre">
+        <PropertyRef Name="IdentifiantClient" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="offre_ibfk_2">
+    <End Role="metier" Type="Self.metier" Multiplicity="1" />
+    <End Role="offre" Type="Self.offre" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="metier">
+        <PropertyRef Name="Identifiant" />
+      </Principal>
+      <Dependent Role="offre">
+        <PropertyRef Name="IdentifiantMetier" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="offre_ibfk_3">
+    <End Role="contrat" Type="Self.contrat" Multiplicity="1" />
+    <End Role="offre" Type="Self.offre" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="contrat">
+        <PropertyRef Name="Identifiant" />
+      </Principal>
+      <Dependent Role="offre">
+        <PropertyRef Name="IdentifiantContrat" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="offrecandidat_ibfk_1">
+    <End Role="offre" Type="Self.offre" Multiplicity="1" />
+    <End Role="offrecandidat" Type="Self.offrecandidat" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="offre">
+        <PropertyRef Name="Identifiant" />
+      </Principal>
+      <Dependent Role="offrecandidat">
+        <PropertyRef Name="IdentifiantOffre" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="offrecandidat_ibfk_2">
+    <End Role="candidat" Type="Self.candidat" Multiplicity="1" />
+    <End Role="offrecandidat" Type="Self.offrecandidat" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="candidat">
+        <PropertyRef Name="Identifiant" />
+      </Principal>
+      <Dependent Role="offrecandidat">
+        <PropertyRef Name="IdentifiantCandidat" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="megacastingv2ModelStoreContainer">
+    <EntitySet Name="candidat" EntityType="Self.candidat" Schema="megacastingv2" store:Type="Tables" />
+    <EntitySet Name="client" EntityType="Self.client" Schema="megacastingv2" store:Type="Tables" />
+    <EntitySet Name="compte" EntityType="Self.compte" Schema="megacastingv2" store:Type="Tables" />
+    <EntitySet Name="contrat" EntityType="Self.contrat" Schema="megacastingv2" store:Type="Tables" />
+    <EntitySet Name="cv" EntityType="Self.cv" Schema="megacastingv2" store:Type="Tables" />
+    <EntitySet Name="diffuseur" EntityType="Self.diffuseur" Schema="megacastingv2" store:Type="Tables" />
+    <EntitySet Name="diplome" EntityType="Self.diplome" Schema="megacastingv2" store:Type="Tables" />
+    <EntitySet Name="domaine" EntityType="Self.domaine" Schema="megacastingv2" store:Type="Tables" />
+    <EntitySet Name="experienceprofessionnelle" EntityType="Self.experienceprofessionnelle" Schema="megacastingv2" store:Type="Tables" />
+    <EntitySet Name="metier" EntityType="Self.metier" Schema="megacastingv2" store:Type="Tables" />
+    <EntitySet Name="offre" EntityType="Self.offre" Schema="megacastingv2" store:Type="Tables" />
+    <EntitySet Name="offrecandidat" EntityType="Self.offrecandidat" Schema="megacastingv2" store:Type="Tables" />
+    <AssociationSet Name="candidat_ibfk_1" Association="Self.candidat_ibfk_1">
+      <End Role="compte" EntitySet="compte" />
+      <End Role="candidat" EntitySet="candidat" />
+    </AssociationSet>
+    <AssociationSet Name="cv_ibfk_1" Association="Self.cv_ibfk_1">
+      <End Role="candidat" EntitySet="candidat" />
+      <End Role="cv" EntitySet="cv" />
+    </AssociationSet>
+    <AssociationSet Name="diffuseur_ibfk_1" Association="Self.diffuseur_ibfk_1">
+      <End Role="compte" EntitySet="compte" />
+      <End Role="diffuseur" EntitySet="diffuseur" />
+    </AssociationSet>
+    <AssociationSet Name="diplome_ibfk_1" Association="Self.diplome_ibfk_1">
+      <End Role="cv" EntitySet="cv" />
+      <End Role="diplome" EntitySet="diplome" />
+    </AssociationSet>
+    <AssociationSet Name="experienceprofessionnelle_ibfk_1" Association="Self.experienceprofessionnelle_ibfk_1">
+      <End Role="cv" EntitySet="cv" />
+      <End Role="experienceprofessionnelle" EntitySet="experienceprofessionnelle" />
+    </AssociationSet>
+    <AssociationSet Name="metier_ibfk_1" Association="Self.metier_ibfk_1">
+      <End Role="domaine" EntitySet="domaine" />
+      <End Role="metier" EntitySet="metier" />
+    </AssociationSet>
+    <AssociationSet Name="offre_ibfk_1" Association="Self.offre_ibfk_1">
+      <End Role="client" EntitySet="client" />
+      <End Role="offre" EntitySet="offre" />
+    </AssociationSet>
+    <AssociationSet Name="offre_ibfk_2" Association="Self.offre_ibfk_2">
+      <End Role="metier" EntitySet="metier" />
+      <End Role="offre" EntitySet="offre" />
+    </AssociationSet>
+    <AssociationSet Name="offre_ibfk_3" Association="Self.offre_ibfk_3">
+      <End Role="contrat" EntitySet="contrat" />
+      <End Role="offre" EntitySet="offre" />
+    </AssociationSet>
+    <AssociationSet Name="offrecandidat_ibfk_1" Association="Self.offrecandidat_ibfk_1">
+      <End Role="offre" EntitySet="offre" />
+      <End Role="offrecandidat" EntitySet="offrecandidat" />
+    </AssociationSet>
+    <AssociationSet Name="offrecandidat_ibfk_2" Association="Self.offrecandidat_ibfk_2">
+      <End Role="candidat" EntitySet="candidat" />
+      <End Role="offrecandidat" EntitySet="offrecandidat" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

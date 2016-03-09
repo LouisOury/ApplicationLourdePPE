@@ -1,0 +1,307 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="megacastingv2Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="megacastingv2Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="candidats" EntityType="megacastingv2Model.candidat" />
+    <EntitySet Name="clients" EntityType="megacastingv2Model.client" />
+    <EntitySet Name="comptes" EntityType="megacastingv2Model.compte" />
+    <EntitySet Name="contrats" EntityType="megacastingv2Model.contrat" />
+    <EntitySet Name="cvs" EntityType="megacastingv2Model.cv" />
+    <EntitySet Name="diffuseurs" EntityType="megacastingv2Model.diffuseur" />
+    <EntitySet Name="diplomes" EntityType="megacastingv2Model.diplome" />
+    <EntitySet Name="domaines" EntityType="megacastingv2Model.domaine" />
+    <EntitySet Name="experienceprofessionnelles" EntityType="megacastingv2Model.experienceprofessionnelle" />
+    <EntitySet Name="metiers" EntityType="megacastingv2Model.metier" />
+    <EntitySet Name="offres" EntityType="megacastingv2Model.offre" />
+    <AssociationSet Name="candidat_ibfk_1" Association="megacastingv2Model.candidat_ibfk_1">
+      <End Role="compte" EntitySet="comptes" />
+      <End Role="candidat" EntitySet="candidats" />
+    </AssociationSet>
+    <AssociationSet Name="cv_ibfk_1" Association="megacastingv2Model.cv_ibfk_1">
+      <End Role="candidat" EntitySet="candidats" />
+      <End Role="cv" EntitySet="cvs" />
+    </AssociationSet>
+    <AssociationSet Name="offre_ibfk_1" Association="megacastingv2Model.offre_ibfk_1">
+      <End Role="client" EntitySet="clients" />
+      <End Role="offre" EntitySet="offres" />
+    </AssociationSet>
+    <AssociationSet Name="diffuseur_ibfk_1" Association="megacastingv2Model.diffuseur_ibfk_1">
+      <End Role="compte" EntitySet="comptes" />
+      <End Role="diffuseur" EntitySet="diffuseurs" />
+    </AssociationSet>
+    <AssociationSet Name="offre_ibfk_3" Association="megacastingv2Model.offre_ibfk_3">
+      <End Role="contrat" EntitySet="contrats" />
+      <End Role="offre" EntitySet="offres" />
+    </AssociationSet>
+    <AssociationSet Name="diplome_ibfk_1" Association="megacastingv2Model.diplome_ibfk_1">
+      <End Role="cv" EntitySet="cvs" />
+      <End Role="diplome" EntitySet="diplomes" />
+    </AssociationSet>
+    <AssociationSet Name="experienceprofessionnelle_ibfk_1" Association="megacastingv2Model.experienceprofessionnelle_ibfk_1">
+      <End Role="cv" EntitySet="cvs" />
+      <End Role="experienceprofessionnelle" EntitySet="experienceprofessionnelles" />
+    </AssociationSet>
+    <AssociationSet Name="metier_ibfk_1" Association="megacastingv2Model.metier_ibfk_1">
+      <End Role="domaine" EntitySet="domaines" />
+      <End Role="metier" EntitySet="metiers" />
+    </AssociationSet>
+    <AssociationSet Name="offre_ibfk_2" Association="megacastingv2Model.offre_ibfk_2">
+      <End Role="metier" EntitySet="metiers" />
+      <End Role="offre" EntitySet="offres" />
+    </AssociationSet>
+    <AssociationSet Name="offrecandidat" Association="megacastingv2Model.offrecandidat">
+      <End Role="offre" EntitySet="offres" />
+      <End Role="candidat" EntitySet="candidats" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="candidat">
+    <Key>
+      <PropertyRef Name="Identifiant" />
+    </Key>
+    <Property Name="Identifiant" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nom" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Prenom" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Telephone" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Portable" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Rue" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CP" Type="Int32" Nullable="false" />
+    <Property Name="Ville" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="DateNaissance" Type="DateTime" Nullable="false" />
+    <Property Name="Permis" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="IdentifiantCompte" Type="Int64" Nullable="false" />
+    <NavigationProperty Name="compte" Relationship="megacastingv2Model.candidat_ibfk_1" FromRole="candidat" ToRole="compte" />
+    <NavigationProperty Name="cvs" Relationship="megacastingv2Model.cv_ibfk_1" FromRole="candidat" ToRole="cv" />
+    <NavigationProperty Name="offres" Relationship="megacastingv2Model.offrecandidat" FromRole="candidat" ToRole="offre" />
+  </EntityType>
+  <EntityType Name="client">
+    <Key>
+      <PropertyRef Name="Identifiant" />
+    </Key>
+    <Property Name="Identifiant" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NomEntreprise" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="NomResponsable" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="PrenomResponsable" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CiviliteResponsable" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="RueEntreprise" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CpEntreprise" Type="Int32" Nullable="false" />
+    <Property Name="VilleEntreprise" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="MailEntreprise" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FaxEntreprise" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="TelephoneEntreprise" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="offres" Relationship="megacastingv2Model.offre_ibfk_1" FromRole="client" ToRole="offre" />
+  </EntityType>
+  <EntityType Name="compte">
+    <Key>
+      <PropertyRef Name="Identifiant" />
+    </Key>
+    <Property Name="Identifiant" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Pseudonyme" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="MotDePasse" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="candidats" Relationship="megacastingv2Model.candidat_ibfk_1" FromRole="compte" ToRole="candidat" />
+    <NavigationProperty Name="diffuseurs" Relationship="megacastingv2Model.diffuseur_ibfk_1" FromRole="compte" ToRole="diffuseur" />
+  </EntityType>
+  <EntityType Name="contrat">
+    <Key>
+      <PropertyRef Name="Identifiant" />
+    </Key>
+    <Property Name="Identifiant" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Libelle" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="offres" Relationship="megacastingv2Model.offre_ibfk_3" FromRole="contrat" ToRole="offre" />
+  </EntityType>
+  <EntityType Name="cv">
+    <Key>
+      <PropertyRef Name="Identifiant" />
+    </Key>
+    <Property Name="Identifiant" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Titre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Divers" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="IdentifiantCandidat" Type="Int64" Nullable="false" />
+    <NavigationProperty Name="candidat" Relationship="megacastingv2Model.cv_ibfk_1" FromRole="cv" ToRole="candidat" />
+    <NavigationProperty Name="diplomes" Relationship="megacastingv2Model.diplome_ibfk_1" FromRole="cv" ToRole="diplome" />
+    <NavigationProperty Name="experienceprofessionnelles" Relationship="megacastingv2Model.experienceprofessionnelle_ibfk_1" FromRole="cv" ToRole="experienceprofessionnelle" />
+  </EntityType>
+  <EntityType Name="diffuseur">
+    <Key>
+      <PropertyRef Name="Identifiant" />
+    </Key>
+    <Property Name="Identifiant" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NomEntreprise" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="IdentifiantCompte" Type="Int64" Nullable="false" />
+    <NavigationProperty Name="compte" Relationship="megacastingv2Model.diffuseur_ibfk_1" FromRole="diffuseur" ToRole="compte" />
+  </EntityType>
+  <EntityType Name="diplome">
+    <Key>
+      <PropertyRef Name="Identifiant" />
+    </Key>
+    <Property Name="Identifiant" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Libelle" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Annee" Type="DateTime" Nullable="false" />
+    <Property Name="IdentifiantCv" Type="Int64" />
+    <NavigationProperty Name="cv" Relationship="megacastingv2Model.diplome_ibfk_1" FromRole="diplome" ToRole="cv" />
+  </EntityType>
+  <EntityType Name="domaine">
+    <Key>
+      <PropertyRef Name="Identifiant" />
+    </Key>
+    <Property Name="Identifiant" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Libelle" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="metiers" Relationship="megacastingv2Model.metier_ibfk_1" FromRole="domaine" ToRole="metier" />
+  </EntityType>
+  <EntityType Name="experienceprofessionnelle">
+    <Key>
+      <PropertyRef Name="Identifiant" />
+    </Key>
+    <Property Name="Identifiant" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NomEntreprise" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="TypeExperience" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="DateDebut" Type="DateTime" Nullable="false" />
+    <Property Name="DateFin" Type="DateTime" />
+    <Property Name="IdentifiantCv" Type="Int64" />
+    <NavigationProperty Name="cv" Relationship="megacastingv2Model.experienceprofessionnelle_ibfk_1" FromRole="experienceprofessionnelle" ToRole="cv" />
+  </EntityType>
+  <EntityType Name="metier">
+    <Key>
+      <PropertyRef Name="Identifiant" />
+    </Key>
+    <Property Name="Identifiant" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Libelle" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="IdentifiantDomaine" Type="Int64" Nullable="false" />
+    <NavigationProperty Name="domaine" Relationship="megacastingv2Model.metier_ibfk_1" FromRole="metier" ToRole="domaine" />
+    <NavigationProperty Name="offres" Relationship="megacastingv2Model.offre_ibfk_2" FromRole="metier" ToRole="offre" />
+  </EntityType>
+  <EntityType Name="offre">
+    <Key>
+      <PropertyRef Name="Identifiant" />
+    </Key>
+    <Property Name="Identifiant" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Libelle" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Reference" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="DateDebutPublication" Type="DateTime" Nullable="false" />
+    <Property Name="DateFinPublication" Type="DateTime" Nullable="false" />
+    <Property Name="DateDebutContrat" Type="DateTime" Nullable="false" />
+    <Property Name="DateFinContrat" Type="DateTime" Nullable="false" />
+    <Property Name="DescriptionPoste" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="DescriptionProfil" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="NombresPoste" Type="Int32" />
+    <Property Name="IdentifiantClient" Type="Int64" Nullable="false" />
+    <Property Name="IdentifiantMetier" Type="Int64" Nullable="false" />
+    <Property Name="IdentifiantContrat" Type="Int64" Nullable="false" />
+    <NavigationProperty Name="client" Relationship="megacastingv2Model.offre_ibfk_1" FromRole="offre" ToRole="client" />
+    <NavigationProperty Name="contrat" Relationship="megacastingv2Model.offre_ibfk_3" FromRole="offre" ToRole="contrat" />
+    <NavigationProperty Name="metier" Relationship="megacastingv2Model.offre_ibfk_2" FromRole="offre" ToRole="metier" />
+    <NavigationProperty Name="candidats" Relationship="megacastingv2Model.offrecandidat" FromRole="offre" ToRole="candidat" />
+  </EntityType>
+  <Association Name="candidat_ibfk_1">
+    <End Type="megacastingv2Model.compte" Role="compte" Multiplicity="1" />
+    <End Type="megacastingv2Model.candidat" Role="candidat" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="compte">
+        <PropertyRef Name="Identifiant" />
+      </Principal>
+      <Dependent Role="candidat">
+        <PropertyRef Name="IdentifiantCompte" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="cv_ibfk_1">
+    <End Type="megacastingv2Model.candidat" Role="candidat" Multiplicity="1" />
+    <End Type="megacastingv2Model.cv" Role="cv" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="candidat">
+        <PropertyRef Name="Identifiant" />
+      </Principal>
+      <Dependent Role="cv">
+        <PropertyRef Name="IdentifiantCandidat" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="offre_ibfk_1">
+    <End Type="megacastingv2Model.client" Role="client" Multiplicity="1" />
+    <End Type="megacastingv2Model.offre" Role="offre" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="client">
+        <PropertyRef Name="Identifiant" />
+      </Principal>
+      <Dependent Role="offre">
+        <PropertyRef Name="IdentifiantClient" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="diffuseur_ibfk_1">
+    <End Type="megacastingv2Model.compte" Role="compte" Multiplicity="1" />
+    <End Type="megacastingv2Model.diffuseur" Role="diffuseur" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="compte">
+        <PropertyRef Name="Identifiant" />
+      </Principal>
+      <Dependent Role="diffuseur">
+        <PropertyRef Name="IdentifiantCompte" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="offre_ibfk_3">
+    <End Type="megacastingv2Model.contrat" Role="contrat" Multiplicity="1" />
+    <End Type="megacastingv2Model.offre" Role="offre" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="contrat">
+        <PropertyRef Name="Identifiant" />
+      </Principal>
+      <Dependent Role="offre">
+        <PropertyRef Name="IdentifiantContrat" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="diplome_ibfk_1">
+    <End Type="megacastingv2Model.cv" Role="cv" Multiplicity="0..1" />
+    <End Type="megacastingv2Model.diplome" Role="diplome" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="cv">
+        <PropertyRef Name="Identifiant" />
+      </Principal>
+      <Dependent Role="diplome">
+        <PropertyRef Name="IdentifiantCv" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="experienceprofessionnelle_ibfk_1">
+    <End Type="megacastingv2Model.cv" Role="cv" Multiplicity="0..1" />
+    <End Type="megacastingv2Model.experienceprofessionnelle" Role="experienceprofessionnelle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="cv">
+        <PropertyRef Name="Identifiant" />
+      </Principal>
+      <Dependent Role="experienceprofessionnelle">
+        <PropertyRef Name="IdentifiantCv" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="metier_ibfk_1">
+    <End Type="megacastingv2Model.domaine" Role="domaine" Multiplicity="1" />
+    <End Type="megacastingv2Model.metier" Role="metier" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="domaine">
+        <PropertyRef Name="Identifiant" />
+      </Principal>
+      <Dependent Role="metier">
+        <PropertyRef Name="IdentifiantDomaine" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="offre_ibfk_2">
+    <End Type="megacastingv2Model.metier" Role="metier" Multiplicity="1" />
+    <End Type="megacastingv2Model.offre" Role="offre" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="metier">
+        <PropertyRef Name="Identifiant" />
+      </Principal>
+      <Dependent Role="offre">
+        <PropertyRef Name="IdentifiantMetier" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="offrecandidat">
+    <End Type="megacastingv2Model.offre" Role="offre" Multiplicity="*" />
+    <End Type="megacastingv2Model.candidat" Role="candidat" Multiplicity="*" />
+  </Association>
+</Schema>

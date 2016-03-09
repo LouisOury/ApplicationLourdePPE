@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="megacastingv2ModelStoreContainer" CdmEntityContainer="megacastingv2Entities">
+    <EntitySetMapping Name="candidats">
+      <EntityTypeMapping TypeName="megacastingv2Model.candidat">
+        <MappingFragment StoreEntitySet="candidat">
+          <ScalarProperty Name="IdentifiantCompte" ColumnName="IdentifiantCompte" />
+          <ScalarProperty Name="Permis" ColumnName="Permis" />
+          <ScalarProperty Name="DateNaissance" ColumnName="DateNaissance" />
+          <ScalarProperty Name="Ville" ColumnName="Ville" />
+          <ScalarProperty Name="CP" ColumnName="CP" />
+          <ScalarProperty Name="Rue" ColumnName="Rue" />
+          <ScalarProperty Name="Portable" ColumnName="Portable" />
+          <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Prenom" ColumnName="Prenom" />
+          <ScalarProperty Name="Nom" ColumnName="Nom" />
+          <ScalarProperty Name="Identifiant" ColumnName="Identifiant" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="clients">
+      <EntityTypeMapping TypeName="megacastingv2Model.client">
+        <MappingFragment StoreEntitySet="client">
+          <ScalarProperty Name="TelephoneEntreprise" ColumnName="TelephoneEntreprise" />
+          <ScalarProperty Name="FaxEntreprise" ColumnName="FaxEntreprise" />
+          <ScalarProperty Name="MailEntreprise" ColumnName="MailEntreprise" />
+          <ScalarProperty Name="VilleEntreprise" ColumnName="VilleEntreprise" />
+          <ScalarProperty Name="CpEntreprise" ColumnName="CpEntreprise" />
+          <ScalarProperty Name="RueEntreprise" ColumnName="RueEntreprise" />
+          <ScalarProperty Name="CiviliteResponsable" ColumnName="CiviliteResponsable" />
+          <ScalarProperty Name="PrenomResponsable" ColumnName="PrenomResponsable" />
+          <ScalarProperty Name="NomResponsable" ColumnName="NomResponsable" />
+          <ScalarProperty Name="NomEntreprise" ColumnName="NomEntreprise" />
+          <ScalarProperty Name="Identifiant" ColumnName="Identifiant" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="comptes">
+      <EntityTypeMapping TypeName="megacastingv2Model.compte">
+        <MappingFragment StoreEntitySet="compte">
+          <ScalarProperty Name="MotDePasse" ColumnName="MotDePasse" />
+          <ScalarProperty Name="Pseudonyme" ColumnName="Pseudonyme" />
+          <ScalarProperty Name="Identifiant" ColumnName="Identifiant" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="contrats">
+      <EntityTypeMapping TypeName="megacastingv2Model.contrat">
+        <MappingFragment StoreEntitySet="contrat">
+          <ScalarProperty Name="Libelle" ColumnName="Libelle" />
+          <ScalarProperty Name="Identifiant" ColumnName="Identifiant" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="cvs">
+      <EntityTypeMapping TypeName="megacastingv2Model.cv">
+        <MappingFragment StoreEntitySet="cv">
+          <ScalarProperty Name="IdentifiantCandidat" ColumnName="IdentifiantCandidat" />
+          <ScalarProperty Name="Divers" ColumnName="Divers" />
+          <ScalarProperty Name="Titre" ColumnName="Titre" />
+          <ScalarProperty Name="Identifiant" ColumnName="Identifiant" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="diffuseurs">
+      <EntityTypeMapping TypeName="megacastingv2Model.diffuseur">
+        <MappingFragment StoreEntitySet="diffuseur">
+          <ScalarProperty Name="IdentifiantCompte" ColumnName="IdentifiantCompte" />
+          <ScalarProperty Name="NomEntreprise" ColumnName="NomEntreprise" />
+          <ScalarProperty Name="Identifiant" ColumnName="Identifiant" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="diplomes">
+      <EntityTypeMapping TypeName="megacastingv2Model.diplome">
+        <MappingFragment StoreEntitySet="diplome">
+          <ScalarProperty Name="IdentifiantCv" ColumnName="IdentifiantCv" />
+          <ScalarProperty Name="Annee" ColumnName="Annee" />
+          <ScalarProperty Name="Libelle" ColumnName="Libelle" />
+          <ScalarProperty Name="Identifiant" ColumnName="Identifiant" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="domaines">
+      <EntityTypeMapping TypeName="megacastingv2Model.domaine">
+        <MappingFragment StoreEntitySet="domaine">
+          <ScalarProperty Name="Libelle" ColumnName="Libelle" />
+          <ScalarProperty Name="Identifiant" ColumnName="Identifiant" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="experienceprofessionnelles">
+      <EntityTypeMapping TypeName="megacastingv2Model.experienceprofessionnelle">
+        <MappingFragment StoreEntitySet="experienceprofessionnelle">
+          <ScalarProperty Name="IdentifiantCv" ColumnName="IdentifiantCv" />
+          <ScalarProperty Name="DateFin" ColumnName="DateFin" />
+          <ScalarProperty Name="DateDebut" ColumnName="DateDebut" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="TypeExperience" ColumnName="TypeExperience" />
+          <ScalarProperty Name="NomEntreprise" ColumnName="NomEntreprise" />
+          <ScalarProperty Name="Identifiant" ColumnName="Identifiant" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="metiers">
+      <EntityTypeMapping TypeName="megacastingv2Model.metier">
+        <MappingFragment StoreEntitySet="metier">
+          <ScalarProperty Name="IdentifiantDomaine" ColumnName="IdentifiantDomaine" />
+          <ScalarProperty Name="Libelle" ColumnName="Libelle" />
+          <ScalarProperty Name="Identifiant" ColumnName="Identifiant" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="offres">
+      <EntityTypeMapping TypeName="megacastingv2Model.offre">
+        <MappingFragment StoreEntitySet="offre">
+          <ScalarProperty Name="IdentifiantContrat" ColumnName="IdentifiantContrat" />
+          <ScalarProperty Name="IdentifiantMetier" ColumnName="IdentifiantMetier" />
+          <ScalarProperty Name="IdentifiantClient" ColumnName="IdentifiantClient" />
+          <ScalarProperty Name="NombresPoste" ColumnName="NombresPoste" />
+          <ScalarProperty Name="DescriptionProfil" ColumnName="DescriptionProfil" />
+          <ScalarProperty Name="DescriptionPoste" ColumnName="DescriptionPoste" />
+          <ScalarProperty Name="DateFinContrat" ColumnName="DateFinContrat" />
+          <ScalarProperty Name="DateDebutContrat" ColumnName="DateDebutContrat" />
+          <ScalarProperty Name="DateFinPublication" ColumnName="DateFinPublication" />
+          <ScalarProperty Name="DateDebutPublication" ColumnName="DateDebutPublication" />
+          <ScalarProperty Name="Reference" ColumnName="Reference" />
+          <ScalarProperty Name="Libelle" ColumnName="Libelle" />
+          <ScalarProperty Name="Identifiant" ColumnName="Identifiant" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="offrecandidat" TypeName="megacastingv2Model.offrecandidat" StoreEntitySet="offrecandidat">
+      <EndProperty Name="candidat">
+        <ScalarProperty Name="Identifiant" ColumnName="IdentifiantCandidat" />
+      </EndProperty>
+      <EndProperty Name="offre">
+        <ScalarProperty Name="Identifiant" ColumnName="IdentifiantOffre" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>
